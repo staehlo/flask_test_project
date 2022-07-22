@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <!--
+      The following css and js scripts are imported to add autocompletion to the language input field
+      see: https://www.geeksforgeeks.org/autocomplete-input-suggestion-using-python-and-flask/
+      and: https://stackoverflow.com/a/22260791/11826257
+    -->
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/jquery-ui.css') }}"></link>
+    <script src="{{ url_for('static', filename='1.7.1_jquery.js')}} ">  </script>
+    <script src="{{ url_for('static', filename='1.8.16_jquery-ui.js')}} ">  </script>
+
+<!-- header -->
+<div style="padding: 5px; background-color:white;">
+  <hr class="my_horizontal_line">
+  <span class="myheading">Programming languages</span><br>
+  <a style="color:white; text-decoration:none;" class="button" href="{{ url_for('about') }}">About</a>
+  <a style="color:white; text-decoration:none;" class="button" href="{{ url_for('table') }}">Table of all</a>
+  <a style="color:white; text-decoration:none;" class="selected_button" disabled>Relationships</a>
+  <a style="color:white; text-decoration:none;" class="button" href="{{ url_for('charts') }}">Charts</a>
+</div><br>
+
+<!-- main part -->
+<form method="GET">
+  Enter a programming language
+  <input type="text" name="language" id="language" placeholder="enter a name"></input>
+  <input type="submit" id="submit" value="Go"></input>
+</form><br>
+
+<script>
+  $( function() {
+    var availableLanguages = [
+        {% for name in Language_names %}
+            "{{name}}",
+        {% endfor %}
+    ];
+    $( "#language" ).autocomplete({
+      source: availableLanguages
+    });
+  } );
+</script>
+
+<table>
+  <tr>
+    <td>Language</td>
+    <td><b>{{language_name|safe}}</b></td>
+  </tr>
+  <tr>
+    <td>year of creation</td>
+    <td>{{year}}</td>
+  </tr>
+  <tr>
+    <td>developer(s)</td>
+    <td>{{developers}}</td>
+  </tr>
+  <tr>
+    <td>supporting company</td>
+    <td>{{companies}}</td>
+  </tr>
+  <tr>
+    <td>was influenced by</td>
+    <td>{{predecessors|safe}}</td>
+  </tr>
+  <tr>
+    <td>had an influence on</td>
+    <td>{{successors|safe}}</td>
+  </tr>
+</table>
+
+{% endblock %}

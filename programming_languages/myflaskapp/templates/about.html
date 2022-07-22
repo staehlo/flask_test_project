@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- header -->
+<div style="padding: 5px; background-color:white;">
+  <hr class="my_horizontal_line">
+  <span class="myheading">Programming languages</span><br>
+  <a style="color:white; text-decoration:none;" class="selected_button" disabled>About</a>
+  <a style="color:white; text-decoration:none;" class="button" href="{{ url_for('table') }}">Table of all</a>
+  <a style="color:white; text-decoration:none;" class="button" href="{{ url_for('relationships') }}">Relationships</a>
+  <a style="color:white; text-decoration:none;" class="button" href="{{ url_for('charts') }}">Charts</a>
+</div><br>
+
+<!-- main part -->
+
+<p>This web application is a test project. The focus lies on the technical implementation of its features and not on the design.</p>
+
+<p style="text-decoration:underline;">The following features were implemented:</p>
+<ul style="line-height:150%">
+  <li>Combining <a href="https://flask.palletsprojects.com">Python's Flask web framework</a> with the <a href="https://datatables.net/">DataTables</a> plug-in for the <a href="https://jquery.com/">jQuery</a> Javascript library</li>
+  <li>Creating plots with Python's <a href="https://matplotlib.org/">matplotlib</a> library</li>
+  <li>Combining Flask with Python's <a href="https://plotly.com/python/">plotly</a> library for interactive chart presentation</li>
+  <li>Deploying a Flask application on <a href="https://www.pythonanywhere.com/">pythonanywhere</a></li>
+</ul>
+
+<p style="text-decoration:underline;">The steps to produce this application were:</p>
+ <ul style="line-height:150%">
+  <li>Simple copy &amp; paste of all tables from Wikipedia's
+  <a href="https://en.wikipedia.org/wiki/Timeline_of_programming_languages">Timeline of programming languages</a><br>
+  (date retrieved: 24 June 2022)
+  <li>Cleaning up the data and solving naming inconsistencies in Excel</li>
+  <li>Importing the data into an SQL database</li>
+  <li>Creating an <a href="https://en.wikipedia.org/wiki/Object%E2%80%93relational_mapping">Object relational mapping</a> with 
+  <a href="https://pypi.org/project/sqlacodegen/">sqlacodegen</a></li>
+  <li>Writing the Flask app</li>
+  <li>Deploying the Flask app</li>
+</ul>
+
+The code of this application can be found on GitHub:<br>
+<a href="https://github.com/staehlo/flask_test_project">GitHub.com/staehlo/flask_test_project</a>
+
+<br><br>
+--- Created in summer 2022 ---
+
+{% endblock %}

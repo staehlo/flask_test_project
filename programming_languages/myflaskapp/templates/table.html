@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/jquery.dataTables.css') }}"></link>
+    <script src="{{ url_for('static', filename='1.7.1_jquery.js')}} ">  </script>
+    <script src="{{ url_for('static', filename='1.12.1_jquery.dataTables.js')}} ">  </script>
+
+<!-- header -->
+<div style="padding: 5px; background-color:white;">
+  <hr class="my_horizontal_line">
+  <span class="myheading">Programming languages</span><br>
+  <a style="color:white; text-decoration:none;" class="button" href="{{ url_for('about') }}">About</a>
+  <a style="color:white; text-decoration:none;" class="selected_button" disabled>Table of all</a>
+  <a style="color:white; text-decoration:none;" class="button" href="{{ url_for('relationships') }}">Relationships</a>
+  <a style="color:white; text-decoration:none;" class="button" href="{{ url_for('charts') }}">Charts</a>
+</div><br>
+
+<!-- main part -->
+{% for table in tables %}
+  {{table|safe}}
+{% endfor %}
+
+<script>$(document).ready( function () {
+    $('#mytable').DataTable();
+} );</script>
+
+{% endblock %}

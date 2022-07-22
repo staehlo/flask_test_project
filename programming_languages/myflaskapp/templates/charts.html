@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- header -->
+<div style="padding: 5px; background-color:white;">
+  <hr class="my_horizontal_line">
+  <span class="myheading">Programming languages</span><br>
+  <a style="color:white; text-decoration:none;" class="button" href="{{ url_for('about') }}">About</a>
+  <a style="color:white; text-decoration:none;" class="button" href="{{ url_for('table') }}">Table of all</a>
+  <a style="color:white; text-decoration:none;" class="button" href="{{ url_for('relationships') }}">Relationships</a>
+  <a style="color:white; text-decoration:none;" class="selected_button" disabled>Charts</a>
+</div><br>
+
+<!-- main part -->
+<script src="{{ url_for('static', filename='plotly_v1.58.5.js')}} "></script>
+
+<div id='chart' class='chart'></div>
+
+<div style="padding: 5px;">
+  <img src="static\plots\developers.svg" alt="developers" height="350">
+  <img src="static\plots\companies.svg" alt="companies" height="350">
+</div>
+
+<div style="padding: 5px;">
+<img src="static\plots\influencers.svg" alt="influencers" height="350">
+<img src="static\plots\followers.svg" alt="followers" height="350">
+<div>
+
+<script type='text/javascript'>
+  var graphs = {{graphJSON | safe}};
+  Plotly.plot('chart',graphs,{});
+</script>
+
+{% endblock %}
