@@ -84,7 +84,9 @@ The Wikipedia article contained various naming inconsistencies between the *pred
 Next, a unique identifier was assigned to each programming language. These identifiers are based on the language names but do not contain any non-alphanumeric characters or any spaces. For example, *C++* was converted to *C_plus_plus*.
 
 ### Data base design
-After carefully reviewing the relationships between the different data points, an entity-relationship model was designed. The *succession*, *team*, and *affiliation* tables are necessary to resolve many-to-many relationships. The *developer* and the *company* tables are only required to make sure that the *team* and the *affiliation* tables name the developers and companies consistently. *SQLite 3.34.1* was used to implement the model and to fill the tables.
+After carefully reviewing the relationships between the different data points, an entity-relationship model was designed. The *succession*, *team*, and *affiliation* tables are necessary to resolve many-to-many relationships. The *developer* and the *company* tables are only required to make sure that the *team* and the *affiliation* tables name the developers and companies consistently.
+![entity_relationship_diagram](https://github.com/staehlo/flask_test_project/blob/main/graphic_for_readme_entity_relationship_diagram.jpg)
+*SQLite 3.34.1* was used to implement the model and to fill the tables.
 *Sqlacodegen 2.3.0* was then used to create a *models.py* file with object-relational mapping classes for the database tables.
 
 ### Application design
