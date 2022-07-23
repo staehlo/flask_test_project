@@ -74,7 +74,7 @@ N.B. The *flask_env=development* part will run the app in development mode so th
 You should see the app now.
 
 
-## A word about the development of the app
+## About the development of the app
 
 ### Data retrieval
 The content of all the tables from Wikipedia's *Timeline of programming languages* was collected by simple copy & pasting to Excel. This was done in June 2022. Any later editing of Wikipedia's article will not show up in the application.
