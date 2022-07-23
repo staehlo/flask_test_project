@@ -2,7 +2,7 @@
 
 This is a training project that explores how you can combine Python's Flask web framework with Python's Matplotlib and plotly libraries. This makes it possible to display fixed charts and interactive charts on websites. The application also integrates jQuery's DataTables plug-in to generate an interactive table.
 
-The content of Wikipedia's *Timeline of programming languages* was used as an example data set:
+The content of Wikipedia's *Timeline of programming languages* was used as an example data set:  
 https://en.wikipedia.org/wiki/Timeline_of_programming_languages
 
 ![from_wiki_to_flask](https://github.com/staehlo/flask_test_project/blob/main/graphic_for_readme_from_wiki_to_flask.jpg)
