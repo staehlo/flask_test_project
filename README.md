@@ -85,7 +85,7 @@ Next, a unique identifier was assigned to each programming language. These ident
 
 ### Data base design
 After carefully reviewing the relationships between the different data points, an entity-relationship model was designed. The *succession*, *team*, and *affiliation* tables are necessary to resolve many-to-many relationships. The *developer* and the *company* tables are only required to make sure that the *team* and the *affiliation* tables name the developers and companies consistently.
-![entity_relationship_diagram](https://github.com/staehlo/flask_test_project/blob/main/graphic_for_readme_entity_relationship_diagram.jpg)
+![entity_relationship_diagram](https://github.com/staehlo/flask_test_project/blob/main/graphic_for_readme_Entity_Relationship_Diagram.jpg)
 *SQLite 3.34.1* was used to implement the model and to fill the tables.
 *Sqlacodegen 2.3.0* was then used to create a *models.py* file with object-relational mapping classes for the database tables.
 
