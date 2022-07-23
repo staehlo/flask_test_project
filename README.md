@@ -5,6 +5,8 @@ This is a training project that explores how you can combine Python's Flask web 
 The content of Wikipedia's *Timeline of programming languages* was used as an example data set:
 https://en.wikipedia.org/wiki/Timeline_of_programming_languages
 
+![from_wiki_to_flask](https://github.com/staehlo/flask_test_project/blob/main/graphic_for_readme_from_wiki_to_flask.jpg)
+
 The finalized application can be viewed at [rahace.pythonanywhere.com](http://rahace.pythonanywhere.com/).
 
 
