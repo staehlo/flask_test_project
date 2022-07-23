@@ -12,7 +12,7 @@ C:[your_path]>flask run
 
 On a Linux system, you can then open a bash terminal and go to the directory
 that contains the 'programming_languages' folder. Enter the following commands:
-your_name@[your_path]$export FLASK_APP=sample
+your_name@[your_path]$export FLASK_APP=programming_languages.myflaskapp
 your_name@[your_path]$export FLASK_ENV=development
 your_name@[your_path]$flask run
 """
